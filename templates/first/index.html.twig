@@ -1,1 +1,13 @@
+{% extends "template.html.twig" %}
 
+{% block title %}
+    {{ prenom }} {{ nom }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ prenom }} {{ nom }}</h1>
+    <p>Bonjour Boubacar Diarra</p>
+    
+    Je veux aller sur cette url absolue: {{ url('first') }}
+
+{% endblock %}

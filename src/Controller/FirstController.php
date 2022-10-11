@@ -13,15 +13,20 @@ class FirstController extends AbstractController
     public function index(): Response
     {           
         return $this->render('first/index.html.twig', [
-            'name' => 'Diarra',
-            'firstname' => 'Boubacar'
+            'nom' => 'Diarra',
+            'prenom' => 'Boubacar',
+            'path' => '   '
         ]);
     }
+    #[Route('/template', name: 'template')]
+    public function template(): Response
+    {           
+        return $this->render('template.html.twig');
+    }
 
-    #[Route('/sayHello/{name}/{firstname}', name: 'say.hello')]
+    // #[Route('/sayHello/{name}/{firstname}', name: 'say.hello')]
     public function sayHello(Request $request, $name, $firstname): Response
     {
-        dd($request);
         return $this->render('first/hello.html.twig', [
             'nom' => $name,
             'prenom' => $firstname,
